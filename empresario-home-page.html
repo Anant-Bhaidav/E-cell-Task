@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Empresario — Business Model Competition | E-Cell IIT Kharagpur</title>
+
+  <!-- Open Graph (uses images from the original site) -->
+  <meta property="og:title" content="Empresario — Business Model Competition" />
+  <meta property="og:description" content="Empresario is the annual business model competition organized by Entrepreneurship Cell, IIT Kharagpur. Your chance to win prizes worth 1 CR+." />
+  <meta property="og:image" content="https://empresario12.vercel.app/images/new-event-images/image1.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- favicon (PNG from original site) -->
+  <link rel="icon" href="https://empresario12.vercel.app/images/logos/empresario-transparent-logo.png" />
+
+  <style>
+    /* ===== Reset & base ===== */
+    :root{
+      --accent:#0b6b5b;
+      --accent-2:#0f9d8e;
+      --accent-glow: rgba(11, 107, 91, 0.5);
+      --muted:#a0aec0;
+      --bg:#0f172a;
+      --card:#1e293b;
+      --glass: rgba(30, 41, 59, 0.7);
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      --maxw:1200px;
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#e2e8f0;
+      background: var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    img{max-width:100%;height:auto;display:block}
+
+    /* ===== Container ===== */
+    .container{
+      width:90%;
+      max-width:var(--maxw);
+      margin:0 auto;
+    }
+
+    /* ===== Header & Nav ===== */
+    header.site-header{
+      position:sticky;
+      top:0;
+      z-index:999;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.65));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+    .nav-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.9rem;
+      text-decoration:none;
+      color:inherit;
+    }
+    .brand img{height:44px; width:auto; display:block}
+    .brand .sitename{
+      font-size:1rem;
+      font-weight:700;
+      letter-spacing:0.2px;
+    }
+    nav[role="navigation"] ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      gap:.6rem;
+      align-items:center;
+    }
+    nav[role="navigation"] a{
+      display:inline-block;
+      padding:8px 12px;
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      border-radius:10px;
+      transition: all .18s ease;
+    }
+    nav[role="navigation"] a:hover,
+    nav[role="navigation"] a:focus{
+      color:var(--accent-2);
+      transform:translateY(-2px);
+      outline: none;
+      box-shadow: 0 0 15px var(--accent-glow);
+      background: rgba(11,107,91,0.1);
+    }
+
+    .cta-nav{
+      display:flex;
+      gap:.6rem;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      padding:10px 14px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#fff;
+      border-radius:12px;
+      border:none;
+      text-decoration:none;
+      font-weight:700;
+      font-size:.95rem;
+      box-shadow: 0 8px 28px rgba(11,107,91,0.14);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .btn.secondary{
+      background:transparent;
+      color:var(--accent-2);
+      border: 1px solid rgba(11,107,91,0.3);
+      box-shadow: 0 0 10px rgba(11,107,91,0.2);
+      font-weight:700;
+    }
+    .btn:hover{ 
+      transform:translateY(-4px); 
+      box-shadow: 0 14px 32px rgba(11,107,91,0.3), 0 0 20px var(--accent-glow);
+    }
+    .btn.secondary:hover{ 
+      background:rgba(11,107,91,0.1);
+      box-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    /* ===== Hero ===== */
+    .hero{
+      padding:48px 0;
+      position:relative;
+      overflow:hidden;
+      border-radius:0;
+      margin-bottom:36px;
+    }
+    .hero .hero-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      align-items:center;
+      gap:24px;
+      min-height:420px;
+    }
+    .hero .left{
+      padding:28px;
+      background:linear-gradient(180deg, rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.65));
+      border-radius:20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .eyebrow{ font-weight:700; color:var(--accent-2); letter-spacing:0.6px; font-size:.95rem; margin-bottom:8px; }
+    .hero h1{
+      margin:0 0 10px 0;
+      font-size:2.15rem;
+      line-height:1.05;
+    }
+    .hero p.lead{ margin:0 0 18px 0; color:var(--muted); font-size:1rem; max-width:54ch; }
+
+    .hero .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:10px; align-items:center; }
+    .hero .media{
+      border-radius:12px;
+      overflow:hidden;
+      height:340px;
+      background: linear-gradient(180deg, rgba(10,22,30,0.1), rgba(10,22,30,0.05));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .hero .media img{ width:100%; height:100%; object-fit:cover; }
+
+    /* ===== Sections ===== */
+    section{ padding:44px 0; }
+    .section-title{ font-size:1.25rem; margin-bottom:18px; color:#e2e8f0; font-weight:700; }
+    .muted{ color:var(--muted); }
+
+    /* Tracks cards */
+    .grid{
+      display:grid;
+      gap:18px;
+    }
+    .tracks-grid{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .card{
+      background:var(--card);
+      border-radius:14px;
+      padding:20px;
+      box-shadow: var(--shadow);
+      transition: all .3s ease;
+      overflow:hidden;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .card:hover{ 
+      transform: translateY(-8px) scale(1.02); 
+      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.3), 0 0 20px var(--accent-glow);
+      z-index: 2;
+    }
+    .card .thumb{ width:120px; flex-shrink:0; border-radius:10px; overflow:hidden }
+    .card h4{ margin:0 0 8px 0; font-size:1rem }
+    .card p{ margin:0; color:var(--muted); font-size:.95rem }
+
+    /* Partners */
+    .partners-grid{ 
+      display:grid; 
+      grid-template-columns:repeat(4, 1fr); 
+      gap:16px; 
+      align-items:center; 
+    }
+    .partner{ 
+      background:var(--card); 
+      padding:20px; 
+      border-radius:10px; 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+      box-shadow: var(--shadow); 
+      transition: all .3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      height: 120px;
+    }
+    .partner:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.3), 0 0 20px var(--accent-glow);
+      z-index: 2;
+    }
+    .partner img{ max-height:60px; width:auto; opacity:.98; }
+
+    /* Initiatives & Events */
+    .initiatives-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .initiative-card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      transition: all .3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      height: 100%;
+    }
+    .initiative-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.3), 0 0 20px var(--accent-glow);
+      z-index: 2;
+    }
+    .initiative-card h4 {
+      margin: 0 0 12px 0;
+      color: var(--accent-2);
+      font-size: 1.1rem;
+    }
+    .initiative-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Team */
+    .team-grid{ display:grid; grid-template-columns: repeat(1,1fr); gap:18px; }
+    .profile{
+      display:flex; 
+      gap:14px; 
+      align-items:center;
+      background:linear-gradient(180deg, var(--card), #1a2438);
+      border-radius:12px;
+      padding:12px;
+      box-shadow: var(--shadow);
+      transition: transform .18s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .profile img{ width:90px; height:90px; object-fit:cover; border-radius:10px; box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2) }
+    .profile h5{ margin:0; font-size:1rem }
+    .profile p{ margin:4px 0 0 0; color:var(--muted); font-size:.9rem }
+
+    /* Contact */
+    .contact-grid{ display:grid; grid-template-columns:1fr; gap:16px; }
+    .contact-card{ 
+      padding:20px; 
+      background:var(--card); 
+      border-radius:12px; 
+      box-shadow: var(--shadow); 
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .socials{ display:flex; gap:16px; margin-top:20px; justify-content: center; }
+    .socials a{ 
+      display:inline-flex; 
+      align-items:center; 
+      justify-content:center; 
+      width:50px; 
+      height:50px; 
+      border-radius:12px; 
+      background:rgba(15,23,42,0.3); 
+      text-decoration:none; 
+      color:var(--accent-2); 
+      transition: all .3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .socials a:hover{ 
+      transform:translateY(-4px) scale(1.1); 
+      background:rgba(15,23,42,0.5);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 15px var(--accent-glow);
+      color: #fff;
+    }
+
+    /* Footer */
+    footer.site-footer{ 
+      padding:24px 0; 
+      border-top:1px solid rgba(255, 255, 255, 0.05); 
+      background:transparent; 
+    }
+    .footer-grid{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; align-items:center }
+
+    /* Back to top - anchor only (visible always) */
+    .back-to-top{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:48px;
+      height:48px;
+      display:inline-grid;
+      place-items:center;
+      border-radius:12px;
+      text-decoration:none;
+      color:white;
+      background:linear-gradient(180deg,var(--accent),var(--accent-2));
+      box-shadow: 0 12px 30px rgba(11,107,91,0.3);
+      z-index:1000;
+      font-weight:800;
+      transform:translateY(0);
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .back-to-top:hover{ 
+      transform:translateY(-6px);
+      box-shadow: 0 12px 30px rgba(11,107,91,0.4), 0 0 15px var(--accent-glow);
+    }
+
+    /* ===== Responsiveness ===== */
+    @media(min-width:640px){
+      .hero .hero-grid{ grid-template-columns: 1fr 460px; gap:28px; }
+      .team-grid{ grid-template-columns: repeat(2, 1fr); }
+      .contact-grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media(min-width:1024px){
+      .hero h1{ font-size:2.85rem; }
+      .container{ width:92%; }
+      .team-grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* Focus styles for accessibility */
+    a:focus, button:focus { outline: 3px solid rgba(11,107,91,0.3); outline-offset:2px; }
+
+  </style>
+</head>
+<body id="top">
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-wrap" aria-hidden="false">
+      <a class="brand" href="#top" aria-label="Empresario Home">
+        <img src="https://empresario12.vercel.app/images/logos/empresario-transparent-logo.png" alt="Empresario logo" />
+        <div class="sitename">Empresario</div>
+      </a>
+
+      <nav role="navigation" aria-label="Main Navigation">
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#tracks">Tracks</a></li>
+          <li><a href="#initiatives">Initiatives</a></li>
+          <li><a href="#partners">Partners</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="cta-nav">
+        <a href="https://empresario12.vercel.app/registration.html" class="btn" aria-label="Register Now">Register Now</a>
+        <a href="#about" class="btn secondary">Learn More</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="left" role="region" aria-labelledby="hero-title">
+          <div class="eyebrow">E-Cell IIT Kharagpur presents</div>
+          <h1 id="hero-title">Empresario: Business Model Competition</h1>
+          <p class="lead">
+            Empresario, organized by Entrepreneurship Cell, IIT Kharagpur, is an annual business model competition aimed at discovering innovative and enterprising ideas.
+          </p>
+          <div class="hero-actions">
+            <a href="https://empresario12.vercel.app/registration.html" class="btn" aria-label="Register for Empresario">REGISTER NOW</a>
+            <a href="#about" class="btn secondary">LEARN MORE</a>
+          </div>
+
+          <p style="margin-top:16px;color:var(--muted);font-size:.95rem">
+            let's build an enterprising India — <strong>Your chance to win prizes worth 1 CR+</strong>
+          </p>
+        </div>
+
+        <div class="media" aria-hidden="false" aria-label="Event image">
+          <!-- hotlinking hero image from the original site -->
+          <img src="https://empresario12.vercel.app/images/new-event-images/image1.jpg" alt="Empresario event meeting" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="container">
+        <h2 id="about-title" class="section-title">About Empresario</h2>
+        <p class="muted">
+          Empresario is the annual business model competition organized by Entrepreneurship Cell, IIT Kharagpur. Entrepreneurship Cell is searching for innovative and enterprising ideas through Empresario. Empresario'25 provides a platform for budding entrepreneurs to get excellent professional mentorship from our experienced, varied, and distinguished mentor pool, and to showcase their ideas in front of Venture Capitalists, Angel Investors, and Industry Leaders.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tracks -->
+    <section id="tracks" aria-labelledby="tracks-title">
+      <div class="container">
+        <h2 id="tracks-title" class="section-title">Tracks</h2>
+
+        <div class="grid tracks-grid">
+          <!-- Card 1 -->
+          <article class="card" role="article" aria-labelledby="t1">
+            <div class="thumb"><img src="https://empresario12.vercel.app/images/tracks/track2.jpg" alt="Product and Services track image"></div>
+            <div>
+              <h4 id="t1">Product and Services Track</h4>
+              <p>A Business Model that is function oriented and is aimed at providing sustainability of both consumption and production. Ideas/Prototypes based on meeting diverse consumer requirements or providing an innovative service.</p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card" role="article" aria-labelledby="t2">
+            <div class="thumb"><img src="https://empresario12.vercel.app/images/tracks/track4.jpg" alt="Social track image"></div>
+            <div>
+              <h4 id="t2">Social Track</h4>
+              <p>A Business Model that focuses on adding value to the people at the bottom of the pyramid and/or help building a greener tomorrow. Empresario's very own track for enterprises that have a positive social or environmental impact.</p>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card" role="article" aria-labelledby="t3">
+            <div class="thumb"><img src="https://empresario12.vercel.app/images/tracks/track3.jpg" alt="IIT KGP track image"></div>
+            <div>
+              <h4 id="t3">IIT KGP Track</h4>
+              <p>Are you a student of IIT KGP? Got some high-potential ideas? This track is exclusively for innovative Business Models of IIT Kharagpur students. The majority of the team members ( 50% or more) should be from IIT Kharagpur.</p>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card" role="article" aria-labelledby="t4">
+            <div class="thumb"><img src="https://empresario12.vercel.app/images/tracks/track7.jpg" alt="AIML track image"></div>
+            <div>
+              <h4 id="t4">AI/ML Track</h4>
+              <p>A business model that is intelligence-oriented and is aimed at enabling innovation, efficiency, and scalability through Artificial Intelligence and Machine Learning. Ideas/Prototypes based on solving diverse real-world challenges, enhancing decision-making, or providing intelligent, automated, and personalized services to meet evolving user needs.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Initiatives / Events -->
+    <section id="initiatives" aria-labelledby="initiatives-title">
+      <div class="container">
+        <h2 id="initiatives-title" class="section-title">Initiatives & Events</h2>
+
+        <div class="initiatives-grid">
+          <div class="initiative-card">
+            <h4>Expert Mentoring</h4>
+            <p>Semi-finalists receive guidance from seasoned entrepreneurs and industry professionals including top VC firms like Blume Ventures and Eximius Ventures to refine their ideas and strategies.</p>
+          </div>
+
+          <div class="initiative-card">
+            <h4>Networking</h4>
+            <p>An excellent opportunity to connect with entrepreneurs, innovative thinkers, potential partners, and investors from world-class firms like Venture Catalysts and Elevation Capital.</p>
+          </div>
+
+          <div class="initiative-card">
+            <h4>Startup Services</h4>
+            <p>To enhance growth, startups gain premium software access and credits on leading platforms like AWS, CRM services, or Incubation support.</p>
+          </div>
+
+          <div class="initiative-card">
+            <h4>Elevator Pitch</h4>
+            <p>Participants pitch their ventures to top angel investors, VCs, and industry leaders from renowned firms like JP Morgan Chase & Co. and Rolls-Royce. This is a unique chance to showcase innovation and attract potential investment.</p>
+          </div>
+
+          <div class="initiative-card">
+            <h4>Prize Money</h4>
+            <p>Awards will be given to winners and runners-up in Products & Services, Social Impact, and Best IIT Kharagpur Entry from a prize pool of over ₹1.2 crore. This investment highlights our commitment to supporting innovative ideas.</p>
+          </div>
+
+          <div class="initiative-card">
+            <h4>Feedback</h4>
+            <p>Valuable, actionable feedback on business models from our expert judging panel of entrepreneurs and investors, empowering you to sharpen your approach and enhance your venture's success.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section id="partners" aria-labelledby="partners-title">
+      <div class="container">
+        <h2 id="partners-title" class="section-title">Partners</h2>
+
+        <div class="partners-grid" aria-hidden="false">
+          <div class="partner"><img src="https://empresario12.vercel.app/images/logos/partners/partner-1.png" alt="AlphaValue Consulting"></div>
+          <div class="partner"><img src="https://empresario12.vercel.app/images/logos/partners/partner-2.png" alt="Elevation"></div>
+          <div class="partner"><img src="https://empresario12.vercel.app/images/logos/partners/partner-3.png" alt="Bharat Innovation Fund"></div>
+          <div class="partner"><img src="https://empresario12.vercel.app/images/logos/partners/partner-5.png" alt="Fluid Ventures"></div>
+          <div class="partner"><img src="https://empresario12.vercel.app/images/logos/partners/partner-6.jpg" alt="Indian Angel Network"></div>
+          <div class="partner"><img src="https://empresario12.vercel.app/images/logos/partners/partner-8.jpeg" alt="IvyCamp"></div>
+          <div class="partner"><img src="https://empresario12.vercel.app/images/logos/partners/partner-9.png" alt="RealtimeX"></div>
+          <div class="partner"><img src="https://empresario12.vercel.app/images/logos/partners/partner-10.png" alt="Unicorn India Ventures"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" aria-labelledby="team-title">
+      <div class="container">
+        <h2 id="team-title" class="section-title">Team</h2>
+
+        <div class="team-grid">
+          <div class="profile" role="group" aria-label="Vinay Raut - Senior Manager">
+            <img src="https://empresario12.vercel.app/images/people/vinay.jpg" alt="Vinay Raut photo">
+            <div>
+              <h5>Vinay Raut</h5>
+              <p class="muted">Senior Manager — Competitions and Associations, Startups and Alumni Relations<br>
+              <a href="mailto:vinay.raut@ecell-iitkgp.org">vinay.raut@ecell-iitkgp.org</a> </p>
+              <p>+91 9022675361</p>
+            </div>
+          </div>
+
+          <div class="profile" role="group" aria-label="Mayank Jha - Senior Manager">
+            <img src="https://empresario12.vercel.app/images/people/mayank.jpg" alt="Mayank Jha photo">
+            <div>
+              <h5>Mayank Jha</h5>
+              <p class="muted">Senior Manager — Competitions and Associations<br>
+              <a href="mailto:mayank.jha@ecell-iitkgp.org">mayank.jha@ecell-iitkgp.org</a> </p>
+              <p>+91 6360924210</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section-title">Contact</h2>
+
+        <div class="contact-grid">
+          <div class="contact-card contact-info">
+            <h4 style="margin:0 0 6px 0">Get in touch with us</h4>
+            <p class="muted" style="margin:0 0 8px 0">Need support? <a href="mailto:info@ecell-iitkgp.org">info@ecell-iitkgp.org</a></p>
+
+            <h5 style="margin-top:20px; text-align:center;">Follow us on social media</h5>
+            <div class="socials" aria-label="Social links">
+              <a href="https://www.facebook.com/ecell.iitkgp/" aria-label="Facebook link" title="Facebook">
+                <!-- inline svg FB icon -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07C2 17.09 5.66 21.15 10.44 21.95v-6.95h-3.14v-2.98h3.14V9.41c0-3.1 1.86-4.8 4.7-4.8 1.36 0 2.78.24 2.78.24v3.06h-1.57c-1.55 0-2.03.97-2.03 1.96v2.35h3.45l-.55 2.98h-2.9V22C18.34 21.15 22 17.09 22 12.07z" fill="currentColor"/>
+                </svg>
+              </a>
+              <a href="https://x.com/ecellkgp" aria-label="Twitter link" title="Twitter">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M22 5.92c-.65.29-1.35.49-2.08.58.75-.45 1.33-1.16 1.6-2.01-.7.42-1.48.72-2.31.88A3.63 3.63 0 0 0 12.2 8.2c0 .28.03.54.09.8-3.02-.15-5.7-1.6-7.49-3.8-.31.53-.49 1.14-.49 1.8 0 1.25.63 2.34 1.59 2.98-.58-.02-1.12-.18-1.6-.44v.04c0 1.73 1.23 3.18 2.86 3.5-.3.08-.62.12-.95.12-.24 0-.48-.02-.71-.07.48 1.5 1.86 2.6 3.5 2.63A7.28 7.28 0 0 1 2 18.4 10.26 10.26 0 0 0 7.08 20c6.4 0 9.9-5.5 9.9-10.27v-.47c.68-.5 1.27-1.12 1.74-1.85-.62.28-1.28.48-1.97.57z" fill="currentColor"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/company/ecellkgp/?originalSubdomain=in" aria-label="LinkedIn link" title="LinkedIn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4.98 3.5C4.98 5 3.8 6.13 2.25 6.13 0.71 6.13 0 5 0 3.5 0 2 1.17 0.88 2.72 0.88 4.27 0.88 4.98 2 4.98 3.5zM0.4 8.9h4.64v14.8H0.4V8.9zM8.04 8.9h4.45v2.02h.06c.62-1.17 2.12-2.4 4.36-2.4 4.67 0 5.53 3.08 5.53 7.08v8.1h-4.64v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8v7.33H8.04V8.9z" fill="currentColor"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/iitkgp_ecell/?hl=en" aria-label="Instagram link" title="Instagram">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 2.16c3.2 0 3.58.01 4.85.06 3.25.15 4.77 1.69 4.92 4.92.05 1.27.06 1.65.06 4.85s-.01 3.58-.06 4.85c-.15 3.25-1.69 4.77-4.92 4.92-1.27.05-1.65.06-4.85.06s-3.58-.01-4.85-.06c-3.25-.15-4.77-1.69-4.92-4.92-.05-1.27-.06-1.65-.06-4.85s.01-3.58.06-4.85C2.38 3.91 3.92 2.37 7.15 2.22 8.42 2.17 8.8 2.16 12 2.16zm0-2.16c-3.27 0-3.68.01-4.96.06C3.54.27 1.47 2.36 1.22 7.04 1.17 8.32 1.16 8.73 1.16 12s.01 3.68.06 4.96c.25 4.68 2.32 6.75 7 7 1.28.05 1.69.06 4.96.06s3.68-.01 4.96-.06c4.68-.25 6.75-2.32 7-7 .05-1.28.06-1.69.06-4.96s-.01-3.68-.06-4.96c-.25-4.68-2.32-6.75-7-7C15.68.01 15.27 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.22-11.14a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z" fill="currentColor"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-card" role="region" aria-label="Map">
+            <h4 style="margin:0 0 8px 0">Location</h4>
+            <p class="muted" style="margin:0 0 12px 0">Entrepreneurship Cell, IIT Kharagpur</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3687.051007875695!2d87.30894927599625!3d22.31459507975253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1d44031d4d5a5f%3A0x5f5dc5e3b3c1c0a!2sIndian%20Institute%20of%20Technology%20Kharagpur!5e0!3m2!1sen!2sin!4v1718967654324!5m2!1sen!2sin" width="100%" height="300" style="border-radius:10px; border:none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="muted">© 2025 <a href="https://www.ecell-iitkgp.org" style="color:var(--muted); text-decoration:none;">Entrepreneurship Cell IIT KGP</a> · <span class="muted">www.ecell-iitkgp.org</span></div>
+
+      <nav aria-label="footer links">
+        <a href="#about" style="margin-right:12px;color:var(--muted);text-decoration:none">About</a>
+        <a href="#tracks" style="margin-right:12px;color:var(--muted);text-decoration:none">Tracks</a>
+        <a href="#contact" style="color:var(--muted);text-decoration:none">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Back to Top (anchor only — no JS) -->
+  <a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
+
+</body>
+</html>
